@@ -14,9 +14,10 @@ while True:
 		print("ERROR file "+file_name+" not found!")
 
 while True:	
-	file_name=input(">Input file name with names (with file extension): ")
+	file_extension=input(">Input file extension: ")
+	file_name=input(">Input file name with names: ")
 	try:
-		file=open(file_name)
+		file=open(file_name+file_extension)
 		break
 	except:
 		print("ERROR file "+file_name+" not found!")
@@ -39,7 +40,7 @@ while not name=="":
 
 #creating files with main file content
 for i in range(len(names)):
-	create=open("renamed/" + names[i] + ".txt","w") #creating file
+	create=open("renamed/" + names[i] + file_extension,"w") #creating file
 	create.write(main_file) #coping content main file in copied file
 	print("Creating " + names[i] + " complete")
 	create.close()
